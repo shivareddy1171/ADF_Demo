@@ -1,0 +1,41 @@
+{
+	"name": "dsSivaCloud",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDbSivaCloud",
+			"type": "LinkedServiceReference",
+			"parameters": {
+				"userNameCloudLS": {
+					"value": "@dataset().dsUserNameSiCloud",
+					"type": "Expression"
+				},
+				"passCloudLS": {
+					"value": "@dataset().dsPasswordSiCloud",
+					"type": "Expression"
+				}
+			}
+		},
+		"parameters": {
+			"dsUserNameSiCloud": {
+				"type": "String"
+			},
+			"dsPasswordSiCloud": {
+				"type": "String"
+			},
+			"destinationTableName": {
+				"type": "String"
+			}
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": {
+				"value": "@dataset().destinationTableName",
+				"type": "Expression"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

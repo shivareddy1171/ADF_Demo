@@ -1,0 +1,21 @@
+{
+	"name": "SqlServerMySystem",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "SqlServer",
+		"typeProperties": {
+			"server": "SHIVAREDDY\\SQLEXPRESS",
+			"database": "Tester",
+			"encrypt": "optional",
+			"trustServerCertificate": false,
+			"authenticationType": "Windows",
+			"userName": "shiva",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiIwNjc1OTcyOC1lNzFmLTQ4YjAtOGE0Ni0yM2ZlODc5ZmU0ZjYiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "selfHostedIntegrationRuntime",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}

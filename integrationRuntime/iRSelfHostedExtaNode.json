@@ -1,0 +1,6 @@
+{
+	"name": "iRSelfHostedExtaNode",
+	"properties": {
+		"type": "SelfHosted"
+	}
+}

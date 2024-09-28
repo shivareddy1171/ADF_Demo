@@ -1,0 +1,44 @@
+{
+	"name": "datasetInputSQLServer",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "SqlServerMySystem",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [
+			{
+				"name": "EmpID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Emp_Name",
+				"type": "varchar"
+			},
+			{
+				"name": "Dept_Name",
+				"type": "varchar"
+			},
+			{
+				"name": "Emp_Role",
+				"type": "varchar"
+			},
+			{
+				"name": "Emp_Address",
+				"type": "varchar"
+			},
+			{
+				"name": "Esal",
+				"type": "bigint",
+				"precision": 19
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "Emp"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

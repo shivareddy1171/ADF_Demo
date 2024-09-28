@@ -1,0 +1,127 @@
+{
+	"name": "prabhatoSivaCloud",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy data1",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [
+					{
+						"name": "Source",
+						"value": "dbo.@{pipeline().parameters.sourceTableName}"
+					},
+					{
+						"name": "Destination",
+						"value": "dbo.@{pipeline().parameters.destinationTableName}"
+					}
+				],
+				"typeProperties": {
+					"source": {
+						"type": "SqlServerSource",
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"writeBehavior": "insert",
+						"sqlWriterUseTableLock": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "dsPrabhaLocal",
+						"type": "DatasetReference",
+						"parameters": {
+							"dsServerNamePra": {
+								"value": "@pipeline().parameters.serverNamePraPipe",
+								"type": "Expression"
+							},
+							"dsDBNamePra": {
+								"value": "@pipeline().parameters.dbNamePraPipe",
+								"type": "Expression"
+							},
+							"dsUserNamePra": {
+								"value": "@pipeline().parameters.userNamePraPipe",
+								"type": "Expression"
+							},
+							"dsPasswordPra": {
+								"value": "@pipeline().parameters.passwordPraPipe",
+								"type": "Expression"
+							},
+							"sourceTableName": {
+								"value": "@pipeline().parameters.sourceTableName",
+								"type": "Expression"
+							}
+						}
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "dsSivaCloud",
+						"type": "DatasetReference",
+						"parameters": {
+							"dsUserNameSiCloud": {
+								"value": "@pipeline().parameters.userNameSivaPipe",
+								"type": "Expression"
+							},
+							"dsPasswordSiCloud": {
+								"value": "@pipeline().parameters.passwordSivaPipe",
+								"type": "Expression"
+							},
+							"destinationTableName": {
+								"value": "@pipeline().parameters.destinationTableName",
+								"type": "Expression"
+							}
+						}
+					}
+				]
+			}
+		],
+		"parameters": {
+			"serverNamePraPipe": {
+				"type": "String"
+			},
+			"dbNamePraPipe": {
+				"type": "String"
+			},
+			"userNamePraPipe": {
+				"type": "String"
+			},
+			"passwordPraPipe": {
+				"type": "String"
+			},
+			"userNameSivaPipe": {
+				"type": "String"
+			},
+			"passwordSivaPipe": {
+				"type": "String"
+			},
+			"destinationTableName": {
+				"type": "String"
+			},
+			"sourceTableName": {
+				"type": "String"
+			}
+		},
+		"annotations": [],
+		"lastPublishTime": "2024-09-15T06:08:23Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

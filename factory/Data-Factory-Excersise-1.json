@@ -1,0 +1,9 @@
+{
+	"name": "Data-Factory-Excersise-1",
+	"location": "southindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "439fc081-65e6-4a8a-9c75-0a0155bb1ba9",
+		"tenantId": "ec29aa8e-3ec9-4eae-a819-8ce1a3923803"
+	}
+}

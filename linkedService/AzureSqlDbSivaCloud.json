@@ -1,0 +1,29 @@
+{
+	"name": "AzureSqlDbSivaCloud",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"parameters": {
+			"userNameCloudLS": {
+				"type": "string"
+			},
+			"passCloudLS": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "AzureSqlDatabase",
+		"typeProperties": {
+			"server": "sqlserver-demo2024sep.database.windows.net",
+			"database": "sivaDB",
+			"encrypt": "optional",
+			"trustServerCertificate": false,
+			"authenticationType": "SQL",
+			"userName": "@{linkedService().userNameCloudLS}",
+			"password": "@{linkedService().passCloudLS}"
+		},
+		"connectVia": {
+			"referenceName": "IRSelfHostedPrabha",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}

@@ -1,0 +1,35 @@
+{
+	"name": "praSystoSivaCloudTrigger",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "prabhatoSivaCloud",
+					"type": "PipelineReference"
+				},
+				"parameters": {
+					"serverNamePraPipe": "LAPTOP-SRPRH5B1",
+					"dbNamePraPipe": "practice",
+					"userNamePraPipe": "prabhakar",
+					"passwordPraPipe": "anusha123",
+					"userNameSivaPipe": "shiva",
+					"passwordSivaPipe": "Admin@321",
+					"destinationTableName": "Local_Cloud_EMP",
+					"sourceTableName": "emp1"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Minute",
+				"interval": 1,
+				"startTime": "2024-09-14T13:20:00",
+				"endTime": "2024-09-15T19:20:00",
+				"timeZone": "India Standard Time"
+			}
+		}
+	}
+}

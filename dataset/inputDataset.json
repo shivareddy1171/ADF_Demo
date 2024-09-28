@@ -1,0 +1,20 @@
+{
+	"name": "inputDataset",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "copydatalinkedservice",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "inputfile.txt",
+				"folderPath": "input",
+				"container": "copydatacontainer"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

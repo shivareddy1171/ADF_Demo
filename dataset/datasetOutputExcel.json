@@ -1,0 +1,22 @@
+{
+	"name": "datasetOutputExcel",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "copydatalinkedservice",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Excel",
+		"typeProperties": {
+			"sheetName": "Sheet1",
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "Book.xlsx",
+				"folderPath": "excel",
+				"container": "copydatacontainer"
+			}
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

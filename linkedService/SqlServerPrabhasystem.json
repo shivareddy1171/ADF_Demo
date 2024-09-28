@@ -1,0 +1,36 @@
+{
+	"name": "SqlServerPrabhasystem",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"description": "Siva local system data moving to my cloud server",
+		"parameters": {
+			"serverNameLS": {
+				"type": "string"
+			},
+			"dBNameLS": {
+				"type": "string"
+			},
+			"userNameLS": {
+				"type": "string"
+			},
+			"passwordLS": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "SqlServer",
+		"typeProperties": {
+			"server": "@{linkedService().serverNameLS}",
+			"database": "@{linkedService().dBNameLS}",
+			"encrypt": "optional",
+			"trustServerCertificate": false,
+			"authenticationType": "Windows",
+			"userName": "@{linkedService().userNameLS}",
+			"password": "@{linkedService().passwordLS}"
+		},
+		"connectVia": {
+			"referenceName": "IRSelfHostedPrabha",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}

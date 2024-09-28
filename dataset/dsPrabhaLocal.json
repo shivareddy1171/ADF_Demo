@@ -1,0 +1,55 @@
+{
+	"name": "dsPrabhaLocal",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "SqlServerPrabhasystem",
+			"type": "LinkedServiceReference",
+			"parameters": {
+				"serverNameLS": {
+					"value": "@dataset().dsServerNamePra",
+					"type": "Expression"
+				},
+				"dBNameLS": {
+					"value": "@dataset().dsDBNamePra",
+					"type": "Expression"
+				},
+				"userNameLS": {
+					"value": "@dataset().dsUserNamePra",
+					"type": "Expression"
+				},
+				"passwordLS": {
+					"value": "@dataset().dsPasswordPra",
+					"type": "Expression"
+				}
+			}
+		},
+		"parameters": {
+			"dsServerNamePra": {
+				"type": "String"
+			},
+			"dsDBNamePra": {
+				"type": "String"
+			},
+			"dsUserNamePra": {
+				"type": "String"
+			},
+			"dsPasswordPra": {
+				"type": "String"
+			},
+			"sourceTableName": {
+				"type": "String"
+			}
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": {
+				"value": "@dataset().sourceTableName",
+				"type": "Expression"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
